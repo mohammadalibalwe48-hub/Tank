@@ -85,7 +85,7 @@ class _AlertsNotificationsWidgetState extends State<AlertsNotificationsWidget> {
                                   size: 24.0,
                                 ),
                                 onPressed: () {
-                                  print('IconButton pressed ...');
+                                  context.safePop();
                                 },
                               ),
                               Text(
@@ -118,7 +118,7 @@ class _AlertsNotificationsWidgetState extends State<AlertsNotificationsWidget> {
                                   size: 24.0,
                                 ),
                                 onPressed: () {
-                                  print('IconButton pressed ...');
+                                  showSnackbar(context, 'Not implemented');
                                 },
                               ),
                             ],
@@ -421,7 +421,8 @@ class _AlertsNotificationsWidgetState extends State<AlertsNotificationsWidget> {
                             crossAxisAlignment: CrossAxisAlignment.center,
                             children: [
                               InkWell(
-                                onTap: () => context.pushNamed(MainDashboardWidget.routeName),
+                                onTap: () => context
+                                    .pushNamed(MainDashboardWidget.routeName),
                                 child: Column(
                                   mainAxisSize: MainAxisSize.min,
                                   mainAxisAlignment: MainAxisAlignment.start,
@@ -466,7 +467,8 @@ class _AlertsNotificationsWidgetState extends State<AlertsNotificationsWidget> {
                                 ),
                               ),
                               InkWell(
-                                onTap: () => context.pushNamed(HistoryAnalyticsWidget.routeName),
+                                onTap: () => context.pushNamed(
+                                    HistoryAnalyticsWidget.routeName),
                                 child: Column(
                                   mainAxisSize: MainAxisSize.min,
                                   mainAxisAlignment: MainAxisAlignment.start,
@@ -511,7 +513,8 @@ class _AlertsNotificationsWidgetState extends State<AlertsNotificationsWidget> {
                                 ),
                               ),
                               InkWell(
-                                onTap: () => context.pushNamed(AlertsNotificationsWidget.routeName),
+                                onTap: () => context.pushNamed(
+                                    AlertsNotificationsWidget.routeName),
                                 child: Column(
                                   mainAxisSize: MainAxisSize.min,
                                   mainAxisAlignment: MainAxisAlignment.start,
@@ -519,7 +522,8 @@ class _AlertsNotificationsWidgetState extends State<AlertsNotificationsWidget> {
                                   children: [
                                     Icon(
                                       Icons.notifications_rounded,
-                                      color: FlutterFlowTheme.of(context).primary,
+                                      color:
+                                          FlutterFlowTheme.of(context).primary,
                                       size: 24.0,
                                     ),
                                     Text(
@@ -549,7 +553,8 @@ class _AlertsNotificationsWidgetState extends State<AlertsNotificationsWidget> {
                                 ),
                               ),
                               InkWell(
-                                onTap: () => context.pushNamed(UserProfileWidget.routeName),
+                                onTap: () => context
+                                    .pushNamed(UserProfileWidget.routeName),
                                 child: Column(
                                   mainAxisSize: MainAxisSize.min,
                                   mainAxisAlignment: MainAxisAlignment.start,

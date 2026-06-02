@@ -222,7 +222,8 @@ class _UserProfileWidgetState extends State<UserProfileWidget> {
                                                 size: 24.0,
                                               ),
                                               onPressed: () {
-                                                print('IconButton pressed ...');
+                                                showSnackbar(
+                                                    context, 'Not implemented');
                                               },
                                             ),
                                             FlutterFlowIconButton(
@@ -237,7 +238,9 @@ class _UserProfileWidgetState extends State<UserProfileWidget> {
                                                 size: 24.0,
                                               ),
                                               onPressed: () {
-                                                print('IconButton pressed ...');
+                                                context.pushNamed(
+                                                    TankSettingsWidget
+                                                        .routeName);
                                               },
                                             ),
                                           ].divide(SizedBox(width: 8.0)),
@@ -760,7 +763,8 @@ class _UserProfileWidgetState extends State<UserProfileWidget> {
                               children: [
                                 InkWell(
                                   onTap: () {
-                                    showSnackbar(context, 'Help & Support Selected');
+                                    showSnackbar(
+                                        context, 'Help & Support Selected');
                                   },
                                   child: wrapWithModel(
                                     model: _model.buttonModel1,
@@ -794,8 +798,8 @@ class _UserProfileWidgetState extends State<UserProfileWidget> {
                                       content: 'Sign Out',
                                       icon: Icon(
                                         Icons.logout_rounded,
-                                        color:
-                                            FlutterFlowTheme.of(context).onError,
+                                        color: FlutterFlowTheme.of(context)
+                                            .onError,
                                         size: 16.0,
                                       ),
                                       iconPresent: true,
@@ -886,7 +890,8 @@ class _UserProfileWidgetState extends State<UserProfileWidget> {
                             crossAxisAlignment: CrossAxisAlignment.center,
                             children: [
                               InkWell(
-                                onTap: () => context.pushNamed(MainDashboardWidget.routeName),
+                                onTap: () => context
+                                    .pushNamed(MainDashboardWidget.routeName),
                                 child: Column(
                                   mainAxisSize: MainAxisSize.min,
                                   mainAxisAlignment: MainAxisAlignment.start,
@@ -931,7 +936,8 @@ class _UserProfileWidgetState extends State<UserProfileWidget> {
                                 ),
                               ),
                               InkWell(
-                                onTap: () => context.pushNamed(HistoryAnalyticsWidget.routeName),
+                                onTap: () => context.pushNamed(
+                                    HistoryAnalyticsWidget.routeName),
                                 child: Column(
                                   mainAxisSize: MainAxisSize.min,
                                   mainAxisAlignment: MainAxisAlignment.start,
@@ -976,7 +982,8 @@ class _UserProfileWidgetState extends State<UserProfileWidget> {
                                 ),
                               ),
                               InkWell(
-                                onTap: () => context.pushNamed(AlertsNotificationsWidget.routeName),
+                                onTap: () => context.pushNamed(
+                                    AlertsNotificationsWidget.routeName),
                                 child: Column(
                                   mainAxisSize: MainAxisSize.min,
                                   mainAxisAlignment: MainAxisAlignment.start,
@@ -1021,7 +1028,8 @@ class _UserProfileWidgetState extends State<UserProfileWidget> {
                                 ),
                               ),
                               InkWell(
-                                onTap: () => context.pushNamed(UserProfileWidget.routeName),
+                                onTap: () => context
+                                    .pushNamed(UserProfileWidget.routeName),
                                 child: Column(
                                   mainAxisSize: MainAxisSize.min,
                                   mainAxisAlignment: MainAxisAlignment.start,
@@ -1029,7 +1037,8 @@ class _UserProfileWidgetState extends State<UserProfileWidget> {
                                   children: [
                                     Icon(
                                       Icons.person_rounded,
-                                      color: FlutterFlowTheme.of(context).primary,
+                                      color:
+                                          FlutterFlowTheme.of(context).primary,
                                       size: 24.0,
                                     ),
                                     Text(

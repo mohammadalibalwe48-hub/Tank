@@ -182,9 +182,7 @@ class _TankListItemWidgetState extends State<TankListItemWidget> {
                                   child: Stack(
                                     alignment: AlignmentDirectional(0.0, 0.0),
                                     children: [
-                                      if (widget.status == 'low'
-                                          ? true
-                                          : false)
+                                      if (widget.status == 'low' ? true : false)
                                         Icon(
                                           Icons.warning_rounded,
                                           color: widget.status == 'low'
@@ -194,9 +192,7 @@ class _TankListItemWidgetState extends State<TankListItemWidget> {
                                                   .success,
                                           size: 14.0,
                                         ),
-                                      if (widget.status == 'low'
-                                          ? false
-                                          : true)
+                                      if (widget.status == 'low' ? false : true)
                                         Icon(
                                           Icons.check_circle_rounded,
                                           color: widget.status == 'low'

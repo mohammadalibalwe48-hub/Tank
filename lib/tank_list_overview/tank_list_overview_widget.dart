@@ -333,7 +333,8 @@ class _TankListOverviewWidgetState extends State<TankListOverviewWidget> {
                             crossAxisAlignment: CrossAxisAlignment.center,
                             children: [
                               InkWell(
-                                onTap: () => context.pushNamed(MainDashboardWidget.routeName),
+                                onTap: () => context
+                                    .pushNamed(MainDashboardWidget.routeName),
                                 child: Column(
                                   mainAxisSize: MainAxisSize.min,
                                   mainAxisAlignment: MainAxisAlignment.start,
@@ -341,7 +342,8 @@ class _TankListOverviewWidgetState extends State<TankListOverviewWidget> {
                                   children: [
                                     Icon(
                                       Icons.home_rounded,
-                                      color: FlutterFlowTheme.of(context).primary,
+                                      color:
+                                          FlutterFlowTheme.of(context).primary,
                                       size: 26.0,
                                     ),
                                     Text(
@@ -377,7 +379,8 @@ class _TankListOverviewWidgetState extends State<TankListOverviewWidget> {
                                 ),
                               ),
                               InkWell(
-                                onTap: () => context.pushNamed(HistoryAnalyticsWidget.routeName),
+                                onTap: () => context.pushNamed(
+                                    HistoryAnalyticsWidget.routeName),
                                 child: Column(
                                   mainAxisSize: MainAxisSize.min,
                                   mainAxisAlignment: MainAxisAlignment.start,
@@ -422,7 +425,8 @@ class _TankListOverviewWidgetState extends State<TankListOverviewWidget> {
                                 ),
                               ),
                               InkWell(
-                                onTap: () => context.pushNamed(AddNewTankWidget.routeName),
+                                onTap: () => context
+                                    .pushNamed(AddNewTankWidget.routeName),
                                 child: Container(
                                   width: 56.0,
                                   height: 56.0,
@@ -434,13 +438,15 @@ class _TankListOverviewWidgetState extends State<TankListOverviewWidget> {
                                   alignment: AlignmentDirectional(0.0, 0.0),
                                   child: Icon(
                                     Icons.add_rounded,
-                                    color: FlutterFlowTheme.of(context).onPrimary,
+                                    color:
+                                        FlutterFlowTheme.of(context).onPrimary,
                                     size: 32.0,
                                   ),
                                 ),
                               ),
                               InkWell(
-                                onTap: () => context.pushNamed(AlertsNotificationsWidget.routeName),
+                                onTap: () => context.pushNamed(
+                                    AlertsNotificationsWidget.routeName),
                                 child: Column(
                                   mainAxisSize: MainAxisSize.min,
                                   mainAxisAlignment: MainAxisAlignment.start,
@@ -485,7 +491,8 @@ class _TankListOverviewWidgetState extends State<TankListOverviewWidget> {
                                 ),
                               ),
                               InkWell(
-                                onTap: () => context.pushNamed(UserProfileWidget.routeName),
+                                onTap: () => context
+                                    .pushNamed(UserProfileWidget.routeName),
                                 child: Column(
                                   mainAxisSize: MainAxisSize.min,
                                   mainAxisAlignment: MainAxisAlignment.start,

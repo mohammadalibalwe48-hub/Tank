@@ -94,7 +94,7 @@ class _HistoryAnalyticsWidgetState extends State<HistoryAnalyticsWidget> {
                                         size: 24.0,
                                       ),
                                       onPressed: () {
-                                        print('IconButton pressed ...');
+                                        context.safePop();
                                       },
                                     ),
                                     Text(
@@ -129,7 +129,8 @@ class _HistoryAnalyticsWidgetState extends State<HistoryAnalyticsWidget> {
                                         size: 24.0,
                                       ),
                                       onPressed: () {
-                                        print('IconButton pressed ...');
+                                        showSnackbar(
+                                            context, 'Not implemented');
                                       },
                                     ),
                                   ],
@@ -919,7 +920,8 @@ class _HistoryAnalyticsWidgetState extends State<HistoryAnalyticsWidget> {
                           crossAxisAlignment: CrossAxisAlignment.center,
                           children: [
                             InkWell(
-                              onTap: () => context.pushNamed(MainDashboardWidget.routeName),
+                              onTap: () => context
+                                  .pushNamed(MainDashboardWidget.routeName),
                               child: Padding(
                                 padding: EdgeInsets.all(8.0),
                                 child: Column(
@@ -967,7 +969,8 @@ class _HistoryAnalyticsWidgetState extends State<HistoryAnalyticsWidget> {
                               ),
                             ),
                             InkWell(
-                              onTap: () => context.pushNamed(HistoryAnalyticsWidget.routeName),
+                              onTap: () => context
+                                  .pushNamed(HistoryAnalyticsWidget.routeName),
                               child: Padding(
                                 padding: EdgeInsets.all(8.0),
                                 child: Column(
@@ -977,7 +980,8 @@ class _HistoryAnalyticsWidgetState extends State<HistoryAnalyticsWidget> {
                                   children: [
                                     Icon(
                                       Icons.history_rounded,
-                                      color: FlutterFlowTheme.of(context).primary,
+                                      color:
+                                          FlutterFlowTheme.of(context).primary,
                                       size: 26.0,
                                     ),
                                     Text(
@@ -1008,7 +1012,8 @@ class _HistoryAnalyticsWidgetState extends State<HistoryAnalyticsWidget> {
                               ),
                             ),
                             InkWell(
-                              onTap: () => context.pushNamed(AlertsNotificationsWidget.routeName),
+                              onTap: () => context.pushNamed(
+                                  AlertsNotificationsWidget.routeName),
                               child: Padding(
                                 padding: EdgeInsets.all(8.0),
                                 child: Column(
@@ -1056,7 +1061,8 @@ class _HistoryAnalyticsWidgetState extends State<HistoryAnalyticsWidget> {
                               ),
                             ),
                             InkWell(
-                              onTap: () => context.pushNamed(UserProfileWidget.routeName),
+                              onTap: () => context
+                                  .pushNamed(UserProfileWidget.routeName),
                               child: Padding(
                                 padding: EdgeInsets.all(8.0),
                                 child: Column(
