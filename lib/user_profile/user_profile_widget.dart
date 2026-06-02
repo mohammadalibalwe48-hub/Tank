@@ -222,7 +222,7 @@ class _UserProfileWidgetState extends State<UserProfileWidget> {
                                                 size: 24.0,
                                               ),
                                               onPressed: () {
-                                                print('IconButton pressed ...');
+                                                showSnackbar(context, 'Edit Profile Selected');
                                               },
                                             ),
                                             FlutterFlowIconButton(
@@ -237,7 +237,7 @@ class _UserProfileWidgetState extends State<UserProfileWidget> {
                                                 size: 24.0,
                                               ),
                                               onPressed: () {
-                                                print('IconButton pressed ...');
+                                                context.pushNamed(TankSettingsWidget.routeName);
                                               },
                                             ),
                                           ].divide(SizedBox(width: 8.0)),
