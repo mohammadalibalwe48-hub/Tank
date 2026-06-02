@@ -211,7 +211,9 @@ class _MainDashboardWidgetState extends State<MainDashboardWidget> {
                                           size: 24.0,
                                         ),
                                         onPressed: () {
-                                          print('IconButton pressed ...');
+                                          context.pushNamed(
+                                              AlertsNotificationsWidget
+                                                  .routeName);
                                         },
                                       ),
                                       Container(
@@ -1035,10 +1037,12 @@ class _MainDashboardWidgetState extends State<MainDashboardWidget> {
                                 crossAxisAlignment: CrossAxisAlignment.center,
                                 children: [
                                   InkWell(
-                                    onTap: () => context.pushNamed(MainDashboardWidget.routeName),
+                                    onTap: () => context.pushNamed(
+                                        MainDashboardWidget.routeName),
                                     child: Column(
                                       mainAxisSize: MainAxisSize.min,
-                                      mainAxisAlignment: MainAxisAlignment.start,
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.start,
                                       crossAxisAlignment:
                                           CrossAxisAlignment.center,
                                       children: [
@@ -1056,7 +1060,8 @@ class _MainDashboardWidgetState extends State<MainDashboardWidget> {
                                                 font: GoogleFonts.inter(
                                                   fontWeight: FontWeight.bold,
                                                   fontStyle:
-                                                      FlutterFlowTheme.of(context)
+                                                      FlutterFlowTheme.of(
+                                                              context)
                                                           .labelSmall
                                                           .fontStyle,
                                                 ),
@@ -1076,10 +1081,12 @@ class _MainDashboardWidgetState extends State<MainDashboardWidget> {
                                     ),
                                   ),
                                   InkWell(
-                                    onTap: () => context.pushNamed(HistoryAnalyticsWidget.routeName),
+                                    onTap: () => context.pushNamed(
+                                        HistoryAnalyticsWidget.routeName),
                                     child: Column(
                                       mainAxisSize: MainAxisSize.min,
-                                      mainAxisAlignment: MainAxisAlignment.start,
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.start,
                                       crossAxisAlignment:
                                           CrossAxisAlignment.center,
                                       children: [
@@ -1096,11 +1103,13 @@ class _MainDashboardWidgetState extends State<MainDashboardWidget> {
                                               .override(
                                                 font: GoogleFonts.inter(
                                                   fontWeight:
-                                                      FlutterFlowTheme.of(context)
+                                                      FlutterFlowTheme.of(
+                                                              context)
                                                           .labelSmall
                                                           .fontWeight,
                                                   fontStyle:
-                                                      FlutterFlowTheme.of(context)
+                                                      FlutterFlowTheme.of(
+                                                              context)
                                                           .labelSmall
                                                           .fontStyle,
                                                 ),
@@ -1123,10 +1132,12 @@ class _MainDashboardWidgetState extends State<MainDashboardWidget> {
                                     ),
                                   ),
                                   InkWell(
-                                    onTap: () => context.pushNamed(AlertsNotificationsWidget.routeName),
+                                    onTap: () => context.pushNamed(
+                                        AlertsNotificationsWidget.routeName),
                                     child: Column(
                                       mainAxisSize: MainAxisSize.min,
-                                      mainAxisAlignment: MainAxisAlignment.start,
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.start,
                                       crossAxisAlignment:
                                           CrossAxisAlignment.center,
                                       children: [
@@ -1143,11 +1154,13 @@ class _MainDashboardWidgetState extends State<MainDashboardWidget> {
                                               .override(
                                                 font: GoogleFonts.inter(
                                                   fontWeight:
-                                                      FlutterFlowTheme.of(context)
+                                                      FlutterFlowTheme.of(
+                                                              context)
                                                           .labelSmall
                                                           .fontWeight,
                                                   fontStyle:
-                                                      FlutterFlowTheme.of(context)
+                                                      FlutterFlowTheme.of(
+                                                              context)
                                                           .labelSmall
                                                           .fontStyle,
                                                 ),
@@ -1170,10 +1183,12 @@ class _MainDashboardWidgetState extends State<MainDashboardWidget> {
                                     ),
                                   ),
                                   InkWell(
-                                    onTap: () => context.pushNamed(TankSettingsWidget.routeName),
+                                    onTap: () => context.pushNamed(
+                                        TankSettingsWidget.routeName),
                                     child: Column(
                                       mainAxisSize: MainAxisSize.min,
-                                      mainAxisAlignment: MainAxisAlignment.start,
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.start,
                                       crossAxisAlignment:
                                           CrossAxisAlignment.center,
                                       children: [
@@ -1190,11 +1205,13 @@ class _MainDashboardWidgetState extends State<MainDashboardWidget> {
                                               .override(
                                                 font: GoogleFonts.inter(
                                                   fontWeight:
-                                                      FlutterFlowTheme.of(context)
+                                                      FlutterFlowTheme.of(
+                                                              context)
                                                           .labelSmall
                                                           .fontWeight,
                                                   fontStyle:
-                                                      FlutterFlowTheme.of(context)
+                                                      FlutterFlowTheme.of(
+                                                              context)
                                                           .labelSmall
                                                           .fontStyle,
                                                 ),
