@@ -85,7 +85,7 @@ class _AlertsNotificationsWidgetState extends State<AlertsNotificationsWidget> {
                                   size: 24.0,
                                 ),
                                 onPressed: () {
-                                  print('IconButton pressed ...');
+                                  context.safePop();
                                 },
                               ),
                               Text(
@@ -118,7 +118,7 @@ class _AlertsNotificationsWidgetState extends State<AlertsNotificationsWidget> {
                                   size: 24.0,
                                 ),
                                 onPressed: () {
-                                  print('IconButton pressed ...');
+                                  context.safePop();
                                 },
                               ),
                             ],
