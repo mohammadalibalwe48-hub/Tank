@@ -211,47 +211,52 @@ class _MainDashboardWidgetState extends State<MainDashboardWidget> {
                                           size: 24.0,
                                         ),
                                         onPressed: () {
-                                          print('IconButton pressed ...');
+                                          context.pushNamed(AlertsNotificationsWidget.routeName);
                                         },
                                       ),
-                                      Container(
-                                        width: 36.0,
-                                        height: 36.0,
-                                        decoration: BoxDecoration(
-                                          color: FlutterFlowTheme.of(context)
-                                              .secondary,
-                                          shape: BoxShape.circle,
-                                        ),
-                                        alignment:
-                                            AlignmentDirectional(0.0, 0.0),
-                                        child: Text(
-                                          'JD',
-                                          textAlign: TextAlign.center,
-                                          maxLines: 1,
-                                          style: FlutterFlowTheme.of(context)
-                                              .labelMedium
-                                              .override(
-                                                font: GoogleFonts.inter(
+                                      InkWell(
+                                        onTap: () {
+                                          context.pushNamed(UserProfileWidget.routeName);
+                                        },
+                                        child: Container(
+                                          width: 36.0,
+                                          height: 36.0,
+                                          decoration: BoxDecoration(
+                                            color: FlutterFlowTheme.of(context)
+                                                .secondary,
+                                            shape: BoxShape.circle,
+                                          ),
+                                          alignment:
+                                              AlignmentDirectional(0.0, 0.0),
+                                          child: Text(
+                                            'JD',
+                                            textAlign: TextAlign.center,
+                                            maxLines: 1,
+                                            style: FlutterFlowTheme.of(context)
+                                                .labelMedium
+                                                .override(
+                                                  font: GoogleFonts.inter(
+                                                    fontWeight: FontWeight.w600,
+                                                    fontStyle:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .labelMedium
+                                                            .fontStyle,
+                                                  ),
+                                                  color:
+                                                      FlutterFlowTheme.of(context)
+                                                          .onSecondary,
+                                                  fontSize: 13.68,
+                                                  letterSpacing: 0.0,
                                                   fontWeight: FontWeight.w600,
                                                   fontStyle:
-                                                      FlutterFlowTheme.of(
-                                                              context)
+                                                      FlutterFlowTheme.of(context)
                                                           .labelMedium
                                                           .fontStyle,
+                                                  lineHeight: 1.33,
                                                 ),
-                                                color:
-                                                    FlutterFlowTheme.of(context)
-                                                        .onSecondary,
-                                                fontSize: 13.68,
-                                                letterSpacing: 0.0,
-                                                fontWeight: FontWeight.w600,
-                                                fontStyle:
-                                                    FlutterFlowTheme.of(context)
-                                                        .labelMedium
-                                                        .fontStyle,
-                                                lineHeight: 1.33,
-                                              ),
-                                          overflow: TextOverflow.clip,
+                                            overflow: TextOverflow.clip,
+                                          ),
                                         ),
                                       ),
                                     ].divide(SizedBox(width: 8.0)),
