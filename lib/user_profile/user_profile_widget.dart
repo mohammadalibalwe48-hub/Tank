@@ -222,7 +222,6 @@ class _UserProfileWidgetState extends State<UserProfileWidget> {
                                                 size: 24.0,
                                               ),
                                               onPressed: () {
-                                                print('IconButton pressed ...');
                                               },
                                             ),
                                             FlutterFlowIconButton(
@@ -237,7 +236,6 @@ class _UserProfileWidgetState extends State<UserProfileWidget> {
                                                 size: 24.0,
                                               ),
                                               onPressed: () {
-                                                print('IconButton pressed ...');
                                               },
                                             ),
                                           ].divide(SizedBox(width: 8.0)),
