@@ -14,7 +14,7 @@ class GlassStatCardWidget extends StatefulWidget {
     String? value,
   })  : this.color = color ?? const Color(0x00000000),
         this.label = label ?? 'Current Vol.',
-        this.value = value ?? '750L';
+        this.value = value ?? '';
 
   final Color color;
   final Widget? icon;
@@ -86,7 +86,7 @@ class _GlassStatCardWidgetState extends State<GlassStatCardWidget> {
                   Text(
                     valueOrDefault<String>(
                       widget.value,
-                      '750L',
+                      '',
                     ),
                     style: FlutterFlowTheme.of(context).titleMedium.override(
                           font: GoogleFonts.inter(
