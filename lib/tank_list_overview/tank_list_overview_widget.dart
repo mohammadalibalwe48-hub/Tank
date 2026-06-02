@@ -6,6 +6,7 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:supabase_flutter/supabase_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'tank_list_overview_model.dart';
 export 'tank_list_overview_model.dart';
@@ -25,10 +26,15 @@ class _TankListOverviewWidgetState extends State<TankListOverviewWidget> {
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
+  late final Stream<List<Map<String, dynamic>>> _tanksStream;
+
   @override
   void initState() {
     super.initState();
     _model = createModel(context, () => TankListOverviewModel());
+    _tanksStream = Supabase.instance.client
+        .from('tanks')
+        .stream(primaryKey: ['id']).order('name', ascending: true);
   }
 
   @override
@@ -266,35 +272,39 @@ class _TankListOverviewWidgetState extends State<TankListOverviewWidget> {
                               ],
                             ),
                           ),
-                          wrapWithModel(
-                            model: _model.tankListItemModel1,
-                            updateCallback: () => safeSetState(() {}),
-                            child: TankListItemWidget(
-                              level: '82',
-                              location: 'Residential Block A',
-                              name: 'Main Roof Tank',
-                              status: 'normal',
-                            ),
-                          ),
-                          wrapWithModel(
-                            model: _model.tankListItemModel2,
-                            updateCallback: () => safeSetState(() {}),
-                            child: TankListItemWidget(
-                              level: '15',
-                              location: 'South Lawn',
-                              name: 'Garden Reservoir',
-                              status: 'low',
-                            ),
-                          ),
-                          wrapWithModel(
-                            model: _model.tankListItemModel3,
-                            updateCallback: () => safeSetState(() {}),
-                            child: TankListItemWidget(
-                              level: '95',
-                              location: 'Basement B1',
-                              name: 'Emergency Backup',
-                              status: 'normal',
-                            ),
+                          StreamBuilder<List<Map<String, dynamic>>>(
+                            stream: _tanksStream,
+                            builder: (context, snapshot) {
+                              if (!snapshot.hasData) {
+                                return Center(
+                                    child: CircularProgressIndicator());
+                              }
+                              final tanks = snapshot.data!;
+                              return Column(
+                                children: tanks.map((tank) {
+                                  final currentVolume =
+                                      tank['current_volume'] ?? 0;
+                                  final maxVolume = tank['max_volume'] ?? 1000;
+                                  final percentage = maxVolume > 0
+                                      ? ((currentVolume / maxVolume) * 100)
+                                          .toInt()
+                                      : 0;
+                                  return wrapWithModel(
+                                    model: _model
+                                        .tankListItemModel1, // Reusing model for rendering
+                                    updateCallback: () => safeSetState(() {}),
+                                    child: TankListItemWidget(
+                                      level: '${percentage}',
+                                      location: tank['location'] ??
+                                          'Unknown Location',
+                                      name: tank['name'] ?? 'Unnamed Tank',
+                                      status:
+                                          percentage < 20 ? 'low' : 'normal',
+                                    ),
+                                  );
+                                }).toList(),
+                              );
+                            },
                           ),
                           Container(
                             height: 140.0,

@@ -1,12 +1,18 @@
 import 'package:flutter/material.dart';
 
 import 'package:flutter_localizations/flutter_localizations.dart';
+import "package:supabase_flutter/supabase_flutter.dart";
 import 'package:flutter_web_plugins/url_strategy.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import 'flutter_flow/flutter_flow_util.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  await Supabase.initialize(
+    url: "https://wrumgqgosjskbtvzqrpk.supabase.co",
+    anonKey:
+        "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6IndydW1ncWdvc2pza2J0dnpxcnBrIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODA0MDQyMjEsImV4cCI6MjA5NTk4MDIyMX0.Pu9nn-3lm0biUb_2w7BhagnuNXJ829ZKURsSBYepbhA",
+  );
   GoRouter.optionURLReflectsImperativeAPIs = true;
   usePathUrlStrategy();
 
