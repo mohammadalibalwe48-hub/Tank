@@ -211,8 +211,8 @@ class _MainDashboardWidgetState extends State<MainDashboardWidget> {
                                           size: 24.0,
                                         ),
                                         onPressed: () {
-                                          print('IconButton pressed ...');
-                                        },
+                                          showSnackbar(context, 'Not Implemented');
+                                      },
                                       ),
                                       Container(
                                         width: 36.0,

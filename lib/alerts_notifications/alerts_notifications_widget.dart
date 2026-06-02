@@ -85,8 +85,8 @@ class _AlertsNotificationsWidgetState extends State<AlertsNotificationsWidget> {
                                   size: 24.0,
                                 ),
                                 onPressed: () {
-                                  print('IconButton pressed ...');
-                                },
+                                  showSnackbar(context, 'Not Implemented');
+                                      },
                               ),
                               Text(
                                 'Notifications',
@@ -118,8 +118,8 @@ class _AlertsNotificationsWidgetState extends State<AlertsNotificationsWidget> {
                                   size: 24.0,
                                 ),
                                 onPressed: () {
-                                  print('IconButton pressed ...');
-                                },
+                                  showSnackbar(context, 'Not Implemented');
+                                      },
                               ),
                             ],
                           ),

@@ -222,8 +222,8 @@ class _UserProfileWidgetState extends State<UserProfileWidget> {
                                                 size: 24.0,
                                               ),
                                               onPressed: () {
-                                                print('IconButton pressed ...');
-                                              },
+                                                showSnackbar(context, 'Not Implemented');
+                                      },
                                             ),
                                             FlutterFlowIconButton(
                                               borderRadius: 8.0,
@@ -237,8 +237,8 @@ class _UserProfileWidgetState extends State<UserProfileWidget> {
                                                 size: 24.0,
                                               ),
                                               onPressed: () {
-                                                print('IconButton pressed ...');
-                                              },
+                                                showSnackbar(context, 'Not Implemented');
+                                      },
                                             ),
                                           ].divide(SizedBox(width: 8.0)),
                                         ),
