@@ -211,7 +211,7 @@ class _MainDashboardWidgetState extends State<MainDashboardWidget> {
                                           size: 24.0,
                                         ),
                                         onPressed: () {
-                                          print('IconButton pressed ...');
+                                          context.pushNamed(AlertsNotificationsWidget.routeName);
                                         },
                                       ),
                                       Container(
