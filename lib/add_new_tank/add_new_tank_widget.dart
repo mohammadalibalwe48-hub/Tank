@@ -83,7 +83,7 @@ class _AddNewTankWidgetState extends State<AddNewTankWidget> {
                               size: 24.0,
                             ),
                             onPressed: () {
-                              print('IconButton pressed ...');
+                              context.safePop();
                             },
                           ),
                           Text(
@@ -105,18 +105,21 @@ class _AddNewTankWidgetState extends State<AddNewTankWidget> {
                                   lineHeight: 1.27,
                                 ),
                           ),
-                          wrapWithModel(
-                            model: _model.buttonModel1,
-                            updateCallback: () => safeSetState(() {}),
-                            child: ButtonWidget(
-                              content: 'Cancel',
-                              iconPresent: false,
-                              iconEndPresent: false,
-                              variant: 'ghost',
-                              size: 'small',
-                              fullWidth: false,
-                              loading: false,
-                              disabled: false,
+                          InkWell(
+                            onTap: () => context.safePop(),
+                            child: wrapWithModel(
+                              model: _model.buttonModel1,
+                              updateCallback: () => safeSetState(() {}),
+                              child: ButtonWidget(
+                                content: 'Cancel',
+                                iconPresent: false,
+                                iconEndPresent: false,
+                                variant: 'ghost',
+                                size: 'small',
+                                fullWidth: false,
+                                loading: false,
+                                disabled: false,
+                              ),
                             ),
                           ),
                         ].divide(SizedBox(width: 16.0)),
@@ -661,37 +664,49 @@ class _AddNewTankWidgetState extends State<AddNewTankWidget> {
                         mainAxisAlignment: MainAxisAlignment.start,
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
-                          wrapWithModel(
-                            model: _model.buttonModel2,
-                            updateCallback: () => safeSetState(() {}),
-                            child: ButtonWidget(
-                              content: 'Save & Connect Sensor',
-                              icon: Icon(
-                                Icons.cloud_upload_rounded,
-                                color: FlutterFlowTheme.of(context).onPrimary,
-                                size: 16.0,
+                          InkWell(
+                            onTap: () {
+                              showSnackbar(context, 'Success');
+                              context.safePop();
+                            },
+                            child: wrapWithModel(
+                              model: _model.buttonModel2,
+                              updateCallback: () => safeSetState(() {}),
+                              child: ButtonWidget(
+                                content: 'Save & Connect Sensor',
+                                icon: Icon(
+                                  Icons.cloud_upload_rounded,
+                                  color: FlutterFlowTheme.of(context).onPrimary,
+                                  size: 16.0,
+                                ),
+                                iconPresent: true,
+                                iconEndPresent: false,
+                                variant: 'primary',
+                                size: 'large',
+                                fullWidth: true,
+                                loading: false,
+                                disabled: false,
                               ),
-                              iconPresent: true,
-                              iconEndPresent: false,
-                              variant: 'primary',
-                              size: 'large',
-                              fullWidth: true,
-                              loading: false,
-                              disabled: false,
                             ),
                           ),
-                          wrapWithModel(
-                            model: _model.buttonModel3,
-                            updateCallback: () => safeSetState(() {}),
-                            child: ButtonWidget(
-                              content: 'Save as Draft',
-                              iconPresent: false,
-                              iconEndPresent: false,
-                              variant: 'outline',
-                              size: 'medium',
-                              fullWidth: true,
-                              loading: false,
-                              disabled: false,
+                          InkWell(
+                            onTap: () {
+                              showSnackbar(context, 'Success');
+                              context.safePop();
+                            },
+                            child: wrapWithModel(
+                              model: _model.buttonModel3,
+                              updateCallback: () => safeSetState(() {}),
+                              child: ButtonWidget(
+                                content: 'Save as Draft',
+                                iconPresent: false,
+                                iconEndPresent: false,
+                                variant: 'outline',
+                                size: 'medium',
+                                fullWidth: true,
+                                loading: false,
+                                disabled: false,
+                              ),
                             ),
                           ),
                         ].divide(SizedBox(height: 16.0)),

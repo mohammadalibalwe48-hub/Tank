@@ -91,7 +91,7 @@ class _SetupInstructionsWidgetState extends State<SetupInstructionsWidget> {
                                       size: 24.0,
                                     ),
                                     onPressed: () {
-                                      print('IconButton pressed ...');
+                                      context.safePop();
                                     },
                                   ),
                                   FlutterFlowIconButton(
@@ -105,7 +105,7 @@ class _SetupInstructionsWidgetState extends State<SetupInstructionsWidget> {
                                       size: 20.0,
                                     ),
                                     onPressed: () {
-                                      print('IconButton pressed ...');
+                                      context.safePop();
                                     },
                                   ),
                                 ],
