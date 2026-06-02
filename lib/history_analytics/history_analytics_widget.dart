@@ -94,7 +94,7 @@ class _HistoryAnalyticsWidgetState extends State<HistoryAnalyticsWidget> {
                                         size: 24.0,
                                       ),
                                       onPressed: () {
-                                        print('IconButton pressed ...');
+                                        context.safePop();
                                       },
                                     ),
                                     Text(
@@ -129,7 +129,7 @@ class _HistoryAnalyticsWidgetState extends State<HistoryAnalyticsWidget> {
                                         size: 24.0,
                                       ),
                                       onPressed: () {
-                                        print('IconButton pressed ...');
+                                        context.safePop();
                                       },
                                     ),
                                   ],
