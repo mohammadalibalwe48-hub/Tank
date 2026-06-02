@@ -87,7 +87,7 @@ class _TankSettingsWidgetState extends State<TankSettingsWidget> {
                                 size: 24.0,
                               ),
                               onPressed: () {
-                                print('IconButton pressed ...');
+                                context.safePop();
                               },
                             ),
                             Text(
@@ -120,7 +120,7 @@ class _TankSettingsWidgetState extends State<TankSettingsWidget> {
                                 size: 24.0,
                               ),
                               onPressed: () {
-                                print('IconButton pressed ...');
+                                context.safePop();
                               },
                             ),
                           ],
@@ -561,42 +561,54 @@ class _TankSettingsWidgetState extends State<TankSettingsWidget> {
                       mainAxisAlignment: MainAxisAlignment.start,
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
-                        wrapWithModel(
-                          model: _model.buttonModel1,
-                          updateCallback: () => safeSetState(() {}),
-                          child: ButtonWidget(
-                            content: 'Save Configuration',
-                            icon: Icon(
-                              Icons.save_rounded,
-                              color: FlutterFlowTheme.of(context).onPrimary,
-                              size: 16.0,
+                        InkWell(
+                          onTap: () {
+                            showSnackbar(context, 'Configuration Saved');
+                            context.safePop();
+                          },
+                          child: wrapWithModel(
+                            model: _model.buttonModel1,
+                            updateCallback: () => safeSetState(() {}),
+                            child: ButtonWidget(
+                              content: 'Save Configuration',
+                              icon: Icon(
+                                Icons.save_rounded,
+                                color: FlutterFlowTheme.of(context).onPrimary,
+                                size: 16.0,
+                              ),
+                              iconPresent: true,
+                              iconEndPresent: false,
+                              variant: 'primary',
+                              size: 'medium',
+                              fullWidth: false,
+                              loading: false,
+                              disabled: false,
                             ),
-                            iconPresent: true,
-                            iconEndPresent: false,
-                            variant: 'primary',
-                            size: 'medium',
-                            fullWidth: false,
-                            loading: false,
-                            disabled: false,
                           ),
                         ),
-                        wrapWithModel(
-                          model: _model.buttonModel2,
-                          updateCallback: () => safeSetState(() {}),
-                          child: ButtonWidget(
-                            content: 'Reset to Factory Defaults',
-                            icon: Icon(
-                              Icons.refresh_rounded,
-                              color: FlutterFlowTheme.of(context).primary,
-                              size: 16.0,
+                        InkWell(
+                          onTap: () {
+                            showSnackbar(context, 'Reset to Factory Defaults');
+                            context.safePop();
+                          },
+                          child: wrapWithModel(
+                            model: _model.buttonModel2,
+                            updateCallback: () => safeSetState(() {}),
+                            child: ButtonWidget(
+                              content: 'Reset to Factory Defaults',
+                              icon: Icon(
+                                Icons.refresh_rounded,
+                                color: FlutterFlowTheme.of(context).primary,
+                                size: 16.0,
+                              ),
+                              iconPresent: true,
+                              iconEndPresent: false,
+                              variant: 'ghost',
+                              size: 'medium',
+                              fullWidth: false,
+                              loading: false,
+                              disabled: false,
                             ),
-                            iconPresent: true,
-                            iconEndPresent: false,
-                            variant: 'ghost',
-                            size: 'medium',
-                            fullWidth: false,
-                            loading: false,
-                            disabled: false,
                           ),
                         ),
                       ].divide(SizedBox(height: 16.0)),
